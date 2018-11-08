@@ -22,3 +22,5 @@ def sum(f: Int => Int):(Int, Int) => Int = {
 
 sum(x=>x)(2,4) //  Sum 2+3+4
 sum(x=>x*x*x) (2,4) // sum 2*2*2 + 3*3*3+ 4*4*4
+
+// please, oricot, take this
