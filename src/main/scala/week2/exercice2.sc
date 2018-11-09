@@ -23,5 +23,6 @@ object exercice2 {
   //fixedPoint(y=>2/y)(1.5)
 
  sqrt(2)
+  1
 
 }
