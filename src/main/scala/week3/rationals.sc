@@ -1,15 +1,16 @@
 object rationals {
 
-  val x = new Rational(1, 3)
+  val x = new RationalT(1, 3)
 
-  val y = new Rational(5, 7)
+  val y = new RationalT(5, 7)
 
   x.numer
   x.denom
 
-  val z = new Rational(3, 2)
+  val z = new RationalT(3, 2)
 
   (x + y).toString
+  x.+(-y).toString
 
 
   print("sub :")
@@ -32,7 +33,7 @@ object rationals {
   //strange.add(strange)
 
 
-  class Rational(x: Int, y: Int) {
+  class RationalT(x: Int, y: Int) {
     require(y > 0, "denominator must be positive")
 
     def this(x: Int) = this(x, 1)
@@ -46,16 +47,16 @@ object rationals {
 
     def denom = y
 
-    def <(that: Rational) = numer * that.denom < that.numer * denom
+    def <(that: RationalT) = numer * that.denom < that.numer * denom
 
-    def max(that: Rational) = if (this.<(that)) that else this
+    def max(that: RationalT) = if (this.<(that)) that else this
 
-    def +(that: Rational) =
-      new Rational(numer * that.denom + denom * that.numer, denom * that.denom)
+    def +(that: RationalT) =
+      new RationalT(numer * that.denom + denom * that.numer, denom * that.denom)
 
-    def unary_- = new Rational(0 - numer, denom)
+    def unary_- = new RationalT(0 - numer, denom)
 
-    def -(that: Rational) = {
+    def -(that: RationalT) = {
       this + -that
       //new Rational(+(-that).numer, +(-that).denom)
     }
@@ -71,7 +72,7 @@ object rationals {
   //  def addRational(r: Rational, s: Rational): Rational =
   //    new Rational(r.numer * s.denom + s.numer*r.denom, r.denom * s.denom)
   //
-  def makeString(r: Rational) =
+  def makeString(r: RationalT) =
     r.numer + "/" + r.denom
 
   //makeString(addRational(new Rational (1,2) , new Rational(2,3 )))
