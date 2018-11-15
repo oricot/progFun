@@ -5,8 +5,6 @@ object intsets {
 
  val t3 = t1 union t5
 
-
-
   abstract class IntSet {
     def incl(x: Int): IntSet
 
@@ -42,7 +40,5 @@ object intsets {
     def union(other: IntSet): IntSet = {
       ( (left union right) union other ) incl elem
     }
-
   }
-
 }

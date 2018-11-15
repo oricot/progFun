@@ -22,6 +22,18 @@ class Nil[T] extends List[T] {
 
   def tail: Nothing = throw new NoSuchElementException("Nil.Tail")
 
+}
+
+object List {
+  def List() = new Nil[T]//the empty list
+
+  def List(length : Int) //the list with single element 1.
+
+  def List(start : Int, end : Int) // the list with elements 2 and 3
+}
+
+class EmptyList {
+  def List() = new List2 {}
 
 }
 
